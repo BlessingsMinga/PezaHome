@@ -1,23 +1,21 @@
 <?php
+//host
+define("HOSTNAME", "localhost");
 
+//DBNAME
+define("DBNAME", "PezaHome");
 
- //host
- define("HOSTNAME", "localhost");
+//USER
+define("USER", "root");
 
- //DBNAME
- define("DBNAME", "PezaHome");
+//Pass
+define("PASS", "");
 
+// Use PDO instead of PPD
+$conn = new PDO("mysql:host=".HOSTNAME.";dbname=".DBNAME.";", USER, PASS);
 
- //USER
- define("USER", "root");
-
- //Pass
- define("PASS", "");
-
- $conn = new PPD("mysql:host=".HOSTNAME.";dbname=".DBNAME.";", USER, PASS);
-
- if($conn == true) {
-    echo "db connected"
- } else {
-    echo "error"
- }
+if($conn) {
+    echo "db connected";
+} else {
+    echo "error";
+}
